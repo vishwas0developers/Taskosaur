@@ -1,10 +1,5 @@
 # Dependencies
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 .pnp
 .pnp.js
 
@@ -15,14 +10,12 @@ coverage/
 junit.xml
 
 # Build outputs
-dist/
 build/
 out/
 
 # Next.js (control-pane)
 .next/
 .vercel
-*.tsbuildinfo
 next-env.d.ts
 
 # NestJS (backend)
@@ -32,7 +25,6 @@ dist/
 client-sdk/dist/
 
 # Environment variables
-.env
 .env.local
 .env.development
 .env.development.local
@@ -84,8 +76,6 @@ temp/
 
 # Cache
 .cache/
-.eslintcache
-.stylelintcache
 .parcel-cache/
 
 # TypeScript
@@ -149,10 +139,12 @@ temp/
 
 
 # Private credential files (ordinary source and databases remain eligible)
+
+# SQLite databases stay local; never publish database files or journals.
+
+# Security protections: private credentials and SQLite stay outside Git.
 .env
 .env.*
-!.env.example
-!.env.*.example
 .ocr_key
 .fernet_key
 .encryption_key
@@ -161,13 +153,11 @@ id_ed25519
 *.p12
 *.pfx
 *.ppk
+credentials.json
 service-account*.json
 *_credentials.json
-credentials.json
 cookies.json
 cookies_*.json
-
-# SQLite databases stay local; never publish database files or journals.
 *.sqlite
 *.sqlite3
 *.db
@@ -176,3 +166,5 @@ cookies_*.json
 *.sqlite3-*
 *.db-*
 *.db3-*
+!.env.example
+!.env.*.example
